@@ -10,3 +10,13 @@ export const loginReducer=(state={username:"NA",token:"NA",usertype:"NA",message
             return state
     }
 }
+export const ManagerReducer=(state={managerEmployee:"NA",Managermessage:"NA"},action)=>{
+    switch(action.type){
+        case "GET_MANAGER_SUCCESS":
+            return {...action.data};
+            case "GET_MANAGER_FAILURE":
+            return {...state,Managermessage:"Empty Data"};
+        default:
+            return state
+    }
+}

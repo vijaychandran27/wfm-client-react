@@ -23,3 +23,16 @@ export function* loginHandler(action){
   }
  
 }
+
+export function* getManagerEmployee(action){
+try{
+let  result = yield call(axios.post,"http://localhost:8000/manager/getEmployees",action.data)
+
+
+yield put({type:"GET_MANAGER_SUCCESS", data:{managerEmployee: result.data.data,managerMessage:result.data.message}})
+  } 
+catch(e){
+    yield put({type:"GET_MANAGER_FAILURE"})
+}
+
+}

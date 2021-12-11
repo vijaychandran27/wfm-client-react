@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import ManagerHome from "./Managers/Home";
+import ManagerHOC from "./Redux/HOC/ManagerHOC";
 import WFMHome from "./WFM/Home";
 
 const token= localStorage.getItem("token");
@@ -12,7 +12,7 @@ const ProtectedRoute = ({ children, ...rest }:any) => {
       {...rest}
       render={({ location }) =>
         token? usertype==="manager"?(
-          <ManagerHome/>
+          <ManagerHOC/>
         ):(<WFMHome/>) : (
           <Redirect
             to={{
