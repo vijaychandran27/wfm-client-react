@@ -14,8 +14,19 @@ export const ManagerReducer=(state={managerEmployee:"NA",Managermessage:"NA"},ac
     switch(action.type){
         case "GET_MANAGER_SUCCESS":
             return {...action.data};
-            case "GET_MANAGER_FAILURE":
+        case "GET_MANAGER_FAILURE":
             return {...state,Managermessage:"Empty Data"};
+        default:
+            return state
+    }
+}
+
+export const wfmReducer=(state={wfmEmployee:"NA",wfmmessage:"NA"},action)=>{
+    switch(action.type){
+        case "GET_WFM_SUCCESS":
+            return {...action.data};
+        case "GET_WFM_FAILURE":
+            return {...state,wfmmessage:"Empty Data"};
         default:
             return state
     }

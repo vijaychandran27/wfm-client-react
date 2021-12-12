@@ -14,6 +14,9 @@ export default connect(
         return bindActionCreators({
             getManagerEmployee:(managerName:any)=>{
                 return {type: "GET_MANAGER_EMPLOYEE",data:managerName}
+            },
+            managerSendReq:(employee:any)=>{
+                return {type: "REQUEST_MANAGER_EMPLOYEE",data:employee}
             }
         },dispatch)
     }
